@@ -1,7 +1,8 @@
 const USER = 'USER';
 
-export function getUser(){
+export function getUser() {
     // get user from local storage
+    return JSON.parse(localStorage.getItem(USER));
     // parse string
     // return parsed user
 }
