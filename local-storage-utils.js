@@ -8,13 +8,15 @@ export function saveUser() {
 
 }
 
-export function createUser(user, password) {
+export function createUser(username, password) {
     // check if username already exists
-    
     // create username from user input
-    // create password from user input
-    //  create empty 'todo' array
-    // store ^^^ into an object
+    const object = {
+        username,
+        password,
+        todo: []
+    };
+    return object;
 }
 
 export function checkPassword() {
