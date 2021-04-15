@@ -52,6 +52,7 @@ header {
     background-color: lightblue;
     height: var(--header-height);
     box-shadow: var(--shadow);
+    margin-bottom: 30px;
 }
 
 h1 {
