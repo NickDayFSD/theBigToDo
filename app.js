@@ -1,25 +1,35 @@
 
 import { getUser, saveUser, createUser, verifyLogin } from './local-storage-utils.js';
-const form = document.querySelector('form');
+const loginSubmit = document.querySelector('#login-submit');
+const signupSubmit = document.querySelector('#signup-submit');
 
 // set event listeners to update state and DOM
 
-form.addEventListener('submit', (e) => {
+loginSubmit.addEventListener('submit', (e) => {
     e.preventDefault;
 
-    const formData = new FormData(form);
+    const formData = new FormData(loginSubmit);
     const loginUsername = formData.get('username');
     const loginPassword = formData.get('password');
-    const newUsername = formData.get('new-username');
-    const newPassword = formData.get('new-password');
-    const createdUser = createUser(newUsername, newPassword);
-
     // saveUser(createdUser);
 
-    if (verifyLogin(loginUsername, loginPassword) === false) {
+    if (verifyLogin(loginUsername, loginPassword === false)) {
         alert('User does not exist, please sign up');
-        saveUser(createdUser);
-    } // else redirect to todo page
-    
+    } else {
+        window.location = './todo';
+    }
+
+});
+
+signupSubmit.addEventListener('submit', (e) => {
+    e.preventDefault;
+
+    const formData = new FormData(signupSubmit);
+
+    const newUsername = formData.get('new-username');
+    const newPassword = formData.get('new-password');
+    // saveUser(createdUser);
+    const newUser = createUser(newUsername, newPassword);
+    saveUser(newUser);
 
 });
