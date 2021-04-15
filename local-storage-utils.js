@@ -16,8 +16,8 @@ export function saveUser(account) {
 export function createUser(username, password) {
 
     const account = {
-        username,
-        password,
+        username: username,
+        password, password,
         todo: []
     };
 
@@ -27,7 +27,6 @@ export function createUser(username, password) {
 export function verifyLogin(username, password) {
 
     const existingAccounts = getUser();
-
     if (existingAccounts.username === username && existingAccounts.password === password) {
         return true;
     } else {
