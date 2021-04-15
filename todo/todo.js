@@ -1,18 +1,4 @@
-<<<<<<< HEAD
-const LOGGED_IN = 'LOGGED_IN';
 
-
-//Keven: I think Joe is doing the loggin?
-//export function login(username) {
-//  localStorage.setItem(LOGGED_IN, username);
-//}
-
-export function logout() {
-    localStorage.setItem(LOGGED_IN, '');
-    window.location = './todos';
-}
-
-=======
 import { getUser } from '../local-storage-utils';
 
 
@@ -53,4 +39,3 @@ function completeTodo() {
 
     updateUser(user);
 }
->>>>>>> d7b0c06da8bba7705c60a242e861fdd914261ff6

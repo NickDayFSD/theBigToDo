@@ -4,7 +4,6 @@ const USER = 'USER';
 export function getUser() {
 
     return JSON.parse(localStorage.getItem(USER));
-
 }
 
 export function saveUser(account) {
@@ -34,4 +33,7 @@ export function verifyLogin(username, password) {
         return false;
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 76985df604ca8af433b98f911f27dbe65725dfaa
