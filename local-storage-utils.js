@@ -16,8 +16,8 @@ export function saveUser(account) {
 export function createUser(username, password) {
 
     const account = {
-        username,
-        password,
+        username: username,
+        password, password,
         todo: []
     };
 
