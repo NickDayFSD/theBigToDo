@@ -35,3 +35,9 @@ export function verifyLogin(username, password) {
     }
 }
 
+export function addTodo(todo) {
+    const user = getUser();
+    user.todo.push(todo.value);
+    saveUser(user);
+
+}

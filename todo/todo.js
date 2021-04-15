@@ -1,30 +1,43 @@
-import { getUser } from '../local-storage-utils';
+
+import { addTodo, getUser } from '../local-storage-utils.js';
+const button = document.querySelector('button');
+const newTodo = document.getElementById('new-to-do');
+const ul = document.querySelector('ul');
 
 
 
 export function renderTodo(todo) {
     //create list element
-    const div = document.querySelector('.to-do-display');
+    const label = document.createElement('label');
+
     const input = document.createElement('input');
     //writing in that list element
-    input.textContent = todo;
+    input.textContent = todo.value;
+    console.log('This is the todo' + todo);
+    console.log('this is the todo.value' + todo.value);
     input.type = 'radio';
-    div.append(input);
+    label.append(input);
+    label.append(todo.value);
+    ul.append(label);
+
 }
 
 
 
-
-function renderTodos() {
-    const user = getUser();
-    const ul = document.querySelector('ul');
-
-    ul.textContent = '';
-    user.todos.forEach(todo => {
-
-        const li = renderLi(todo);
-
-        ul.append(li);
-    });
+const user = getUser();
+if (user.todo) {
+    for (let item of user.todo) {
+        renderTodo(item);
+    }
 }
+
+button.addEventListener('click', () => {
+    addTodo(newTodo);
+
+    renderTodo(newTodo);
+    //On click
+});
+
+
+
 
