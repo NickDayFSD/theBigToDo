@@ -1,3 +1,5 @@
+
+
 #new-to-do {
     min-width: 300px;
     max-width: 500px;
@@ -7,9 +9,15 @@
 .to-do-display {
     max-width: fit-content;
     min-width: 400px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font: xx-large;
     color: honeydew;
     background-image: url(../assets/chalkboard.jpeg);
     padding: 30px;
+}
+
+li {
+    font-family: 'ToscuchetCMRegular';
+    font-weight: lighter;
+    font-style: normal;
+    font-size: xx-large;
 }
