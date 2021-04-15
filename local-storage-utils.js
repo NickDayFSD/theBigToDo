@@ -1,5 +1,6 @@
 const USER = 'USER';
 
+
 export function getUser() {
 
     return JSON.parse(localStorage.getItem(USER));
@@ -34,3 +35,4 @@ export function verifyLogin(username, password) {
         return false;
     }
 }
+
