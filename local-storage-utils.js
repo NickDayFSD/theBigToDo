@@ -34,3 +34,8 @@ export function verifyLogin(username, password) {
         return false;
     }
 }
+
+export function updateUser(user) {
+    const stringyUser = JSON.stringify(user);
+    localStorage.setItem(USER, stringyUser);
+}

@@ -1,24 +1,18 @@
 import { getUser } from '../local-storage-utils';
 
-function renderTodo(todo) {
+
+
+export function renderTodo(todo) {
     //create list element
+    const div = document.querySelector('.to-do-display');
     const input = document.createElement('input');
     //writing in that list element
     input.textContent = todo;
     input.type = 'radio';
-
-    //if the todo is completed line thru the list element
-    if (todo.completed) {
-        li.style.textDecoration = 'line-through';
-    }
-
-    li.addEventListener('click', () => {
-        completeTodo(todo.todo);
-
-        renderTodos();
-    });
-    return li;
+    div.append(input);
 }
+
+
 
 
 
