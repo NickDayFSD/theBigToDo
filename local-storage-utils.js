@@ -1,9 +1,9 @@
 const USER = 'USER';
 
-
 export function getUser() {
 
     return JSON.parse(localStorage.getItem(USER));
+
 }
 
 export function saveUser(account) {
@@ -27,9 +27,11 @@ export function createUser(username, password) {
 export function verifyLogin(username, password) {
 
     const existingAccounts = getUser();
+
     if (existingAccounts.username === username && existingAccounts.password === password) {
         return true;
     } else {
         return false;
     }
 }
+
