@@ -1,7 +1,8 @@
 const USER = 'USER';
 
-export function getUser(){
+export function getUser() {
     // get user from local storage
+    return JSON.parse(localStorage.getItem(USER));
     // parse string
     // return parsed user
 }
@@ -24,6 +25,16 @@ export function createUser(username, password) {
     return account;
 }
 
-export function checkPassword() {
+export function verifyLogin(username, password) {
+    // take in a username and password
+    const existingAccounts = getUser();
+    // use getUser() to get existing accounts 
+    if (existingAccounts.username === username && existingAccounts.password === password) {
+        return true;
+    } else {
+        return false;
+    }
 
+    // checking if username and password match an existing account
+    // if no match throw error, if match pass to Todo page
 }

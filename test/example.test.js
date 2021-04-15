@@ -1,10 +1,10 @@
 // IMPORT MODULES under test here:
 
-import { createUser, saveUser } from '../local-storage-utils.js';
+import { createUser, saveUser, getUser, verifyLogin } from '../local-storage-utils.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
+test('this test should create the user object', (expect) => {
 
     const expected = {
         username: 'phil',
@@ -20,7 +20,7 @@ test('time to test a function', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-test('time to test a function', (expect) => {
+test('this test should save user to local storage', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = {
@@ -28,7 +28,7 @@ test('time to test a function', (expect) => {
         password: '666',
         todo: []
     };
-    
+
     const account = {
         username: 'phil',
         password: '666',
@@ -37,8 +37,7 @@ test('time to test a function', (expect) => {
 
     saveUser(account);
     //Act 
-    console.log('this is the account: ' + account);
-    console.log('this is the expected: ' + expected);
+
     // Call the function you're testing and set the result to a const
     // return an object from local storage
     const actual = JSON.parse(localStorage.getItem('USER'));
@@ -48,28 +47,54 @@ test('time to test a function', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-test('time to test a function', (expect) => {
+test('this test should get a user from local storage', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = true;
-    
+    // 
+
+
+    const expected = {
+        username: 'phil',
+        password: '666',
+        todo: []
+    };
+
+    const account = {
+        username: 'phil',
+        password: '666',
+        todo: []
+    };
+
+    saveUser(account);
+
+
+
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = true;
+    const actual = getUser();
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    expect.deepEqual(actual, expected);
 });
 
-test('time to test a function', (expect) => {
+test('this test should compare input to existing account', (expect) => {
     //Arrange
+    const username = 'phil';
+    const password = '666';
+    const account = {
+        username: 'phil',
+        password: '666',
+        todo: []
+    };
+
+    saveUser(account);
     // Set up your arguments and expectations
     const expected = true;
-    
+
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = true;
+    const actual = verifyLogin(username, password);
 
     //Expect
     // Make assertions about what is expected versus the actual result
