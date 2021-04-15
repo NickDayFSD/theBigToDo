@@ -16,7 +16,6 @@ export function renderTodo(todo) {
 
 
 
-
 function renderTodos() {
     const user = getUser();
     const ul = document.querySelector('ul');
@@ -30,12 +29,3 @@ function renderTodos() {
     });
 }
 
-function completeTodo() {
-    const user = getUser();
-
-    matchingTodo = user.todos.find((todo) => todoMessage === todo.todo);
-
-    matchingTodo.completed = true;
-
-    updateUser(user);
-}
