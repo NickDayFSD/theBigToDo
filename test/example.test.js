@@ -21,8 +21,7 @@ test('this test should create the user object', (expect) => {
 });
 
 test('this test should save user to local storage', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
+
     const expected = {
         username: 'phil',
         password: '666',
@@ -36,22 +35,13 @@ test('this test should save user to local storage', (expect) => {
     };
 
     saveUser(account);
-    //Act 
 
-    // Call the function you're testing and set the result to a const
-    // return an object from local storage
     const actual = JSON.parse(localStorage.getItem('USER'));
 
-    //Expect
-    // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
 });
 
 test('this test should get a user from local storage', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
-    // 
-
 
     const expected = {
         username: 'phil',
@@ -67,19 +57,13 @@ test('this test should get a user from local storage', (expect) => {
 
     saveUser(account);
 
-
-
-    //Act 
-    // Call the function you're testing and set the result to a const
     const actual = getUser();
 
-    //Expect
-    // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
 });
 
 test('this test should compare input to existing account', (expect) => {
-    //Arrange
+
     const username = 'phil';
     const password = '666';
     const account = {
@@ -89,14 +73,10 @@ test('this test should compare input to existing account', (expect) => {
     };
 
     saveUser(account);
-    // Set up your arguments and expectations
+
     const expected = true;
 
-    //Act 
-    // Call the function you're testing and set the result to a const
     const actual = verifyLogin(username, password);
 
-    //Expect
-    // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
 });
