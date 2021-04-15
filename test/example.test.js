@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 
-import { createUser, saveUser, getUser } from '../local-storage-utils.js';
+import { createUser, saveUser, getUser, verifyLogin } from '../local-storage-utils.js';
 
 const test = QUnit.test;
 
@@ -78,14 +78,23 @@ test('this test should get a user from local storage', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-test('time to test a function', (expect) => {
+test('this test should compare input to existing account', (expect) => {
     //Arrange
+    const username = 'phil';
+    const password = '666';
+    const account = {
+        username: 'phil',
+        password: '666',
+        todo: []
+    };
+
+    saveUser(account);
     // Set up your arguments and expectations
     const expected = true;
 
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = true;
+    const actual = verifyLogin(username, password);
 
     //Expect
     // Make assertions about what is expected versus the actual result
