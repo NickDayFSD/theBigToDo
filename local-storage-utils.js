@@ -3,7 +3,6 @@ const USER = 'USER';
 export function getUser() {
 
     return JSON.parse(localStorage.getItem(USER));
-
 }
 
 export function saveUser(account) {
@@ -16,8 +15,8 @@ export function saveUser(account) {
 export function createUser(username, password) {
 
     const account = {
-        username: username,
-        password, password,
+        username,
+        password,
         todo: []
     };
 
