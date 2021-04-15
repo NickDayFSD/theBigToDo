@@ -47,10 +47,16 @@ section {
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
+}
+
+h1 {
+    font-size: xx-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 footer {

@@ -9,17 +9,44 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
-    <title>Document</title>
+    <title>Things To Do</title>
 </head>
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="assets/big-logo.png"/>
+        <div class="title">
+            <h1>Things To Do</h1>
         </div>
     </header>
     <main>
-        
+        <div>Login to get to your To Do List below</div>
+        <div class="login-container">
+            <fieldset>
+                <form>
+                    <label>
+                        <input type="text" name="username" id="login-username" placeholder="username"/>
+                    </label>
+                    <label>
+                        <input type="password" name="password" id="login-password" placeholder="password"/>
+                    </label>
+                    <button id="login-submit-button">SUBMIT</button>
+                </form>
+            </fieldset>
+        </div>
+        <div>Don't have an account? Sign up here!</div>
+        <div class="signup-container">
+            <fieldset>
+                <form>
+                    <label>
+                        <input type="text" name="new-username" id="signup-username" placeholder="username"/>
+                    </label>
+                    <label>
+                        <input type="password" name="new-password" id="signup-password" placeholder="password"/>
+                    </label>
+                    <button id="signup-submit-button">SUBMIT</button>
+                </form>
+            </fieldset>
+        </div>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
