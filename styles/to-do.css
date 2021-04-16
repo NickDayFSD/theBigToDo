@@ -8,17 +8,27 @@
 
 .to-do-display {
     max-width: fit-content;
-    min-width: 400px;
-    font: xx-large;
+    min-width: 600px;
+    min-height: 600px;
+    height: 100%;
+    font-family: 'ToscuchetCMRegular';
+    font-weight: lighter;
+    font-style: normal;
+    font-size: xx-large;
     color: honeydew;
     background-image: url(../assets/chalkboard.jpeg);
     padding: 30px;
 }
 
-li {
-    font-family: 'ToscuchetCMRegular';
-    font-weight: lighter;
-    font-style: normal;
-    font-size: xx-large;
+input[type=checkbox]:checked + label.strikethrough{
+    text-decoration: line-through;
+  }
+
+ul {
+    display: flex;
+    flex-direction: column;
 }
 
+/*label > input {
+    display: none;
+}*/
