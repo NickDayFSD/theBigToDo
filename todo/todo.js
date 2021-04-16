@@ -7,13 +7,14 @@ const ul = document.querySelector('ul');
 
 
 export function renderTodo(todo) {
+
     //create list element
     const label = document.createElement('li');
-    label.textContent = `${todo}`;
+    label.textContent = todo;
     const input = document.createElement('input');
     //writing in that list element
     input.type = 'checkbox';
-    //label.classList = 'strikethrough';
+
     label.append(input);
    // label.append(todo);
     ul.append(label);
@@ -30,8 +31,10 @@ if (user.todo) {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-    
+    const newTodo = formData.get('new-to-do');
+    console.log(newTodo);
     addTodo(newTodo);
 
-    renderTodo(newTodo.value);
+    renderTodo(newTodo);
+    
 });

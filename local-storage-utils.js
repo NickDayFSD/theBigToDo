@@ -6,6 +6,7 @@ export function getUser() {
 
 }
 
+
 export function saveUser(account) {
 
     const stringAccount = JSON.stringify(account);
@@ -35,9 +36,13 @@ export function verifyLogin(username, password) {
     }
 }
 
-export function addTodo(todo) {
+export function addTodo(task) {
     const user = getUser();
-    user.todo.push(todo.value);
+    const todo = {
+        todo: task,
+        completed: false
+    };
+    user.todo.push(todo);
     console.log(todo);
     saveUser(user);
 }
